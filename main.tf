@@ -70,3 +70,8 @@ resource "azurerm_subnet" "new_subnet-2" {
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.2.0/28"] # Ensure this does not overlap existing subnets
 }
+resource "azurerm_resource_group" "example" {
+  name     = "example"
+  location = var.location
+  tags = var.tags
+}
